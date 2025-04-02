@@ -23,7 +23,6 @@ OBJS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-asw/components/ccbkgtcexec/src \
 asw/components/cchk_fdirmng/src \
 asw/components/cctcmanager/src \
 asw/components/uah_asw/src \
@@ -57,5 +56,4 @@ service_libraries/pus_services/pus_tc_handler/src \
 service_libraries/pus_services/pus_tm_handler/scr \
 service_libraries/pus_services/src \
 service_libraries/serialize/src \
-. \
 
