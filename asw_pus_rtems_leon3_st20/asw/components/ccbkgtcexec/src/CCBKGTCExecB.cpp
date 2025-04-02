@@ -115,6 +115,8 @@ void CCBKGTCExec::EDROOM_SUB_Top_0::EDROOMBehaviour()
 				break;
 			//Next Transition is ExecTC
 			case (ExecTC):
+				//Msg->Data Handling 
+				FExecBKGTC();
 				//Next State is Ready
 				edroomNextState = Ready;
 				break;
@@ -198,6 +200,24 @@ TEDROOMTransId CCBKGTCExec::EDROOM_SUB_Top_0::EDROOMReadyArrival()
 	{
 
 		EDROOMNewMessage ();
+
+		switch(Msg->signal)
+		{
+
+			case (SBKGTC): 
+
+				 if (*Msg->GetPInterface() == BKGExecCtrl)
+				{
+
+					//Next transition is  ExecTC
+					edroomCurrentTrans.localId= ExecTC;
+					edroomCurrentTrans.distanceToContext = 0;
+					edroomValidMsg=true;
+				 }
+
+				break;
+
+		};
 
 		if (false == edroomValidMsg)
 		{
