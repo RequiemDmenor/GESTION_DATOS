@@ -235,8 +235,11 @@ error_code_t pus_service4_update_PID_stats(uint16_t pid_index) {
 
 			} else if (sys_data_pool_param_lower_than_limit(param_id,
 					&ParamStats[pid_index].min)) {
+				//DONE 02 update Min. See Max update as model
+				sys_data_pool_get_param_value(param_id,
+						&ParamStats[pid_index].min);
 
-				//TODO 02 update Min. See Max update as model
+				ParamStats[pid_index].min_obt = obt_drv_get_current_obt();
 
 
 
