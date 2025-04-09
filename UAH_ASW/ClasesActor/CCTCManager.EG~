@@ -234,9 +234,9 @@ GToReboot()
 Reboot
 DSubEst
 FExecTC();
-
  
-
+ 
+ 
 ;
 ;
 ;
@@ -268,9 +268,9 @@ GFwdToHK_FDIR()
 Ready
 DSubEst
 ;
-
  
-
+ 
+ 
 ;
 FFwdHK_FDIRTC();
 ;
@@ -285,9 +285,9 @@ GFwdToBKG()
 Ready
 DSubEst
 ;
-
  
-
+ 
+ 
 ;
 FFwdBKGTC();
 ;

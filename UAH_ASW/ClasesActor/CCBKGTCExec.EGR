@@ -158,7 +158,7 @@ FExecBKGTC()
 0
 0
 1
-
+ 
 4
 	
 		// Data access
@@ -169,7 +169,7 @@ Msg->data
 BKGExecCtrl
 SBKGTC
 CDTCHandler
-
+ 
 [MaquinasSubEstados]
 0
 [FinMaquinasSubEstados]
