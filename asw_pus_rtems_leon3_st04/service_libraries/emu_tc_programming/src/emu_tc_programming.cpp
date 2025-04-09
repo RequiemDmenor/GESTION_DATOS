@@ -56,11 +56,11 @@ EmuGSS_TCProgram4_1 prog_FT_0090_step_2(FT_SOLO_EPD_ICU_SERV_4_0090_TIME_step2,
 		"FT_SOLO_EPD_ICU_SERV_4_0090 step 2, Tx Stats");
 
 
-//TODO 10 Delete PID 3 Stats as step 3
+//DONE 10 Delete PID 3 Stats as step 3
+EmuGSS_TCProgram4_7 prog_FT_0090_step_3(OBT_AFTER_POWER_ON + 10,"FT_SOLO_EPD_ICU_SERV_04_0090_Step_3, Delete PID 3 Stats Def",3);
 
-
-//TODO 11 Request Stats as step 4
-
+//DONE 11 Request Stats as step 4
+EmuGSS_TCProgram4_1 prog_FT_0090_step_4(OBT_AFTER_POWER_ON + 10,"FT_SOLO_EPD_ICU_SERV_04_0090_Step_4, Tx PID Stats TM[4,2]");
 
 #endif
 

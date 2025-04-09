@@ -202,7 +202,7 @@ bool	CCTCManager::EDROOM_CTX_Top_0::GFwdToBKG()
 
 {
 
-return VTCExecCtrl.IsBKGTC()
+return VTCExecCtrl.IsBKGTC();
 
 }
 

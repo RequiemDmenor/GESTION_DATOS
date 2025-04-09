@@ -97,17 +97,15 @@ void pus_service4_exec_TC_4_1(tc_handler_t *ptc_handler) {
 				error += tm_handler_append_uint32_appdata_field(&tm_handler,
 						ParamStats[i].max_obt);
 
-				//TODO 07 Complete Min -> TM and Min OBT -> TM
-
-				//Use Max->TM and Max OBT->TM as example
+				//DONE 07 Complete Min -> TM and Min OBT -> TM. Use Max->TM and Max OBT->TM as example
 
 				//Min -> TM
-
-
-
+				error += pus_services_TM_X_Y_write_saved_PIDValue(&tm_handler,
+					    PID, &ParamStats[i].min);
 
 				//Min OBT -> TM
-
+				error += tm_handler_append_uint32_appdata_field(&tm_handler,
+						ParamStats[i].min_obt);
 
 
 
@@ -225,24 +223,23 @@ void pus_service4_exec_TC_4_7(tc_handler_t *ptc_handler) {
 
 				pus_service1_tx_TM_1_3(ptc_handler);
 
-				//TODO  08 Complete TC[4,7] (See TC[4,6] execution as model)
+				//DONE  08 Complete TC[4,7] (See TC[4,6] execution as model)
 					//1) Use error=pus_service4_delete_PID_stats to try to delete
 					     //the PID stats
 					//2) Generate TM[1,7] if !error
 					//3) Generate TM[1,8] if (error==true)
 						//(use pus_service1_tx_TM_1_8_PID_stat_undefined
 						//to report this error)
+				// Try to delete the stats of this param
+				error=pus_service4_delete_PID_stats(PID);
 
+				if (!error){
+					pus_service1_tx_TM_1_7(ptc_handler);
 
+				}else{
+					pus_service1_tx_TM_1_8_PID_stats_undefined(ptc_handler,PID);
 
-
-
-
-
-
-
-
-
+				}
 
 			} else {	//If not valid PID
 
